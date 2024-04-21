@@ -1,0 +1,86 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f4;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+button {
+    background: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4cae4c;
+}
+
+button[type="reset"] {
+    background: #d9534f;
+}
+
+button[type="reset"]:hover {
+    background: #c9302c;
+}
+
+#result {
+    margin-top: 20px;
+    background: #eef;
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    display: none;
+}
+
+fieldset label {
+    margin-right: 20px;
+}
+
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #result, #result * {
+        visibility: visible;
+    }
+    #result {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
+

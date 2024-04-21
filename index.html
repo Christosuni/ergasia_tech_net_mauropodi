@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <title>Φόρμα Συμπλήρωσης Κενών</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Φόρμα Συμπλήρωσης Κενών</h1>
+        <form id="fill-blanks-form">
+            <label for="name">Όνομα (*):</label>
+            <input type="text" id="name" name="name" required pattern="[Α-Ωα-ωΆ-Ώά-ώ ]+">
+
+            <label for="email">Email (*):</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="register-number">Αρ. Μητρώου (*):</label>
+            <input type="number" id="register-number" name="register-number" required>
+
+            <fieldset>
+                <legend>Ποιά κατεύθυνση έχω:</legend>
+                <label>
+                    <input type="radio" id="education" name="direction" value="education" required>
+                    Εκπαίδευση
+                </label>
+                <label>
+                    <input type="radio" id="advanced" name="direction" value="advanced">
+                    Προηγμένα
+                </label>
+            </fieldset>
+
+            <label for="numBlanks">Πόσα κενά να υπάρχουν (*):</label>
+            <input type="number" id="numBlanks" name="numBlanks" required min="0" max="10" placeholder="π.χ. 5">
+
+            <label for="title">Τίτλος αποσπάσματος (*):</label>
+            <input type="text" id="title" name="title" required maxlength="20" placeholder="Τίτλος έως 20 χαρακτήρες">
+
+            <label for="excerpt">Απόσπασμα (*):</label>
+            <textarea id="excerpt" name="excerpt" required></textarea>
+
+            <button type="button" onclick="calculateBlanks()">Υπολογισμός</button>
+            <button type="button" onclick="printForm()">Εκτύπωση</button>
+            <button type="reset">Καθαρισμός</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

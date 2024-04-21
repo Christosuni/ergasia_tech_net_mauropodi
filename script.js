@@ -12,6 +12,14 @@ function calculateBlanks() {
         return;
     }
 
+    // Έλεγχος για έγκυρο email
+    const emailValue = document.getElementById('email').value.trim();
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(emailValue)) {
+        alert('Το email δεν είναι έγκυρο. Πρέπει να περιέχει τον χαρακτήρα "@" και τουλάχιστον μία τελεία "." μετά το "@". Μόνο λατινικοί χαρακτήρες επιτρέπονται.');
+        return;
+    }
+
     const title = document.getElementById('title').value.trim();
     const excerpt = document.getElementById('excerpt').value.trim();
     const numBlanks = parseInt(document.getElementById('numBlanks').value, 10);
@@ -76,9 +84,6 @@ function printForm() {
         printWindow.close();
     }, 250);
 }
-
-
-
 
 document.getElementById('fill-blanks-form').onreset = function() {
     document.getElementById('result').style.display = 'none';
